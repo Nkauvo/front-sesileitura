@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SESI Leitura+ - Registrar Atividade</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#F0F0F0] m-0 flex justify-center items-start min-h-screen p-5 font-['DM_Sans'] antialiased">
+
+  <div class="w-[390px] min-h-[780px] bg-white rounded-[36px] shadow-[0_30px_80px_rgba(0,0,0,0.18),0_0_0_8px_#1A1A2E] overflow-hidden relative flex flex-col">
+    
+    <div class="flex items-center justify-between px-5 pt-[18px] pb-2.5">
+      <h2 class="text-lg font-bold text-[#1A1A2E] m-0 font-['Sora']">Registrar Leitura</h2>
+      <button class="bg-none border-none cursor-pointer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" class="w-5.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </button>
+    </div>
+
+    <form id="diaryForm" class="px-5 pb-24 overflow-y-auto flex-1">
+      
+      <div class="text-center mb-1">
+        <p class="text-[11px] text-[#888888] font-semibold tracking-wider m-0 mb-2.5">REGISTRAR ATIVIDADE</p>
+        <p class="text-sm text-gray-600 m-0 mb-5">Quanto você leu hoje?</p>
+        <div class="text-7xl font-bold font-['Sora'] text-[#C1121F] leading-none">12</div>
+        <p class="text-xs text-[#888888] mt-2 mb-5">Tempo de leitura selecionado (minutos)</p>
+      </div>
+
+      <div class="px-2 mb-2">
+        <input type="range" name="minutos" min="1" max="16" value="12" class="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#C1121F]" />
+        <div class="flex justify-between mt-1">
+          <span class="text-[11px] text-[#888888]">1 min</span>
+          <span class="text-[11px] text-[#888888]">16 min</span>
+        </div>
+      </div>
+
+      <div class="bg-[#FFEAEA] border-l-4 border-[#C1121F] rounded-r-lg p-3.5 mb-5 flex gap-2.5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C1121F" stroke-width="2" class="w-5 h-5 shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        <div>
+          <p class="text-sm font-bold text-[#C1121F] m-0 mb-1">Limite Diário</p>
+          <p class="text-xs text-gray-600 m-0 class-leading-normal">O tempo máximo de registro por dia é de 16 minutos. Este limite ajuda a manter uma rotina de estudos equilibrada e constante.</p>
+        </div>
+      </div>
+
+      <div class="mb-[18px]">
+        <p class="text-xs font-semibold text-gray-700 m-0 mb-2.5">Livro lido hoje</p>
+        
+        <label class="flex items-center gap-2.5 p-2.5 px-3 rounded-xl border border-2 border-[#C1121F] bg-[#FFEAEA] mb-2 cursor-pointer transition-all duration-200">
+          <input type="radio" name="book_id" value="1" checked class="hidden" />
+          <span class="text-2xl">📖</span>
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-[#C1121F] m-0">O Cortiço</p>
+            <p class="text-xs text-[#888888] m-0">Aluísio Azevedo</p>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C1121F" stroke-width="2.5" class="w-5"><polyline points="20 6 9 17 4 12"/></svg>
+        </label>
+
+        <label class="flex items-center gap-2.5 p-2.5 px-3 rounded-xl border border-gray-100 bg-gray-50 mb-2 cursor-pointer transition-all duration-200 hover:border-gray-300">
+          <input type="radio" name="book_id" value="2" class="hidden" />
+          <span class="text-2xl">📚</span>
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-[#1A1A2E] m-0">Dom Casmurro</p>
+            <p class="text-xs text-[#888888] m-0">Machado de Assis</p>
+          </div>
+        </label>
+      </div>
+
+      <div class="mb-5">
+        <p class="text-xs font-semibold text-gray-700 m-0 mb-2">Anotações (opcional)</p>
+        <textarea name="observacoes" placeholder="O que achou do que leu hoje?" rows="3" class="w-full border border-gray-200 rounded-xl p-3 text-sm text-gray-800 resize-none outline-none font-['DM_Sans'] bg-gray-50 focus:border-[#C1121F] focus:bg-white"></textarea>
+      </div>
+
+      <button type="submit" class="bg-[#C1121F] text-white border-none rounded-xl p-3.5 text-sm font-bold cursor-pointer w-full tracking-wide transition-all duration-200 hover:bg-[#a00e19] active:scale-95 font-['Sora'] mb-4">
+        CONFIRMAR REGISTRO
+      </button>
+    </form>
+
+    <div class="flex border-t border-gray-100 bg-white pt-2 pb-1 sticky bottom-0 mt-auto z-10">
+      <a href="home.html" class="flex-1 flex flex-col items-center gap-0.5 text-[10px] font-medium py-1 text-[#888888] hover:text-[#C1121F]">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="ranking.html" class="flex-1 flex flex-col items-center gap-0.5 text-[10px] font-medium py-1 text-[#888888] hover:text-[#C1121F]">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Ranking
+      </a>
+      <a href="diary.html" class="flex-1 flex flex-col items-center gap-0.5 text-[10px] font-medium py-1 text-[#C1121F]">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Diário
+      </a>
+      <a href="profile.html" class="flex-1 flex flex-col items-center gap-0.5 text-[10px] font-medium py-1 text-[#888888] hover:text-[#C1121F]">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Perfil
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    const API_URL = 'https://sesileitura-back.vercel.app';
+
+    document.getElementById('diaryForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const usuario = JSON.parse(localStorage.getItem('usuario') || 'null');
+      if (!usuario?.id) {
+        alert('Faça login antes de registrar uma leitura.');
+        window.location.href = 'index.html';
+        return;
+      }
+
+      const form = event.currentTarget;
+      const minutos = Number(form.minutos.value);
+
+      try {
+        const resposta = await fetch(`${API_URL}/api/leituras`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ usuario_id: usuario.id, minutos })
+        });
+
+        const resultado = await resposta.json();
+
+        if (!resposta.ok) {
+          alert(resultado.mensagem || 'Não foi possível registrar a leitura.');
+          return;
+        }
+
+        alert('Leitura registrada com sucesso!');
+        window.location.href = 'home.html';
+      } catch (erro) {
+        alert('Erro ao conectar com o servidor.');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SESI Leitura+ - Ranking</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#F0F0F0] m-0 flex justify-center items-start min-h-screen p-5 font-['DM_Sans'] antialiased">
+
+  <div class="w-[390px] min-h-[780px] bg-white rounded-[36px] shadow-[0_30px_80px_rgba(0,0,0,0.18),0_0_0_8px_#1A1A2E] overflow-hidden relative flex flex-col">
+    
+    <div class="flex items-center justify-between px-5 pt-[18px] pb-2.5">
+      <h1 class="text-xl font-bold text-[#1A1A2E] m-0 font-['Sora']">Ranking</h1>
+      <button class="bg-none border-none cursor-pointer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2" class="w-6"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </button>
+    </div>
+
+    <div class="px-5 pb-24 overflow-y-auto flex-1">
+      
+      <div class="flex bg-gray-100 rounded-xl p-1 mb-5">
+        <button class="flex-1 py-2 border-none rounded-lg text-xs font-semibold cursor-pointer transition-all duration-200 bg-[#C1121F] text-white shadow-sm">Minha Sala</button>
+        <button class="flex-1 py-2 border-none rounded-lg text-xs font-semibold cursor-pointer transition-all duration-200 bg-transparent text-gray-500 hover:text-gray-700">Geral Escola</button>
+      </div>
+
+      <div class="flex items-end justify-center gap-3 mb-6">
+        
+        <div class="flex flex-col items-center gap-1.5 w-[80px]">
+          <div class="h-5"></div>
+          <div class="w-12 h-12 rounded-full bg-[#444444] flex items-center justify-center text-white font-bold text-sm font-['Sora']">3B</div>
+          <div class="text-xl">🥈</div>
+          <div class="w-full h-18 bg-[#333333] rounded-t-lg flex items-center justify-center font-['Sora'] font-bold text-white text-[11px] text-center p-1.5 h-[70px]">
+            3º B
+          </div>
+          <div class="text-[11px] font-bold text-gray-600">4.820 pts</div>
+        </div>
+
+        <div class="flex flex-col items-center gap-1.5 w-[80px]">
+          <div class="h-5"></div>
+          <div class="w-12 h-12 rounded-full bg-[#444444] flex items-center justify-center text-white font-bold text-sm font-['Sora'] border-3 border-yellow-400">3B</div>
+          <div class="text-xl">🥇</div>
+          <div class="w-full h-[90px] bg-[#333333] rounded-t-lg flex items-center justify-center font-['Sora'] font-bold text-white text-[11px] text-center p-1.5">
+            3º B
+          </div>
+          <div class="text-[11px] font-bold text-gray-600">5.240 pts</div>
+        </div>
+
+        <div class="flex flex-col items-center gap-1.5 w-[80px]">
+          <div class="h-5"></div>
+          <div class="w-12 h-12 rounded-full bg-[#444444] flex items-center justify-center text-white font-bold text-sm font-['Sora']">1C</div>
+          <div class="text-xl">🥉</div>
+          <div class="w-full h-14 bg-[#333333] rounded-t-lg flex items-center justify-center font-['Sora'] font-bold text-white text-[11px] text-center p-1.5 h-[55px]">
+            1º C
+          </div>
+          <div class="text-[11px] font-bold text-gray-600">4.150 pts</div>
+        </div>
+
+      </div>
+
+      <p class="text-[11px] font-bold text-[#888888] tracking-wider m-0 mb-2">OUTRAS TURMAS</p>
+      
+      <div class="flex items-center gap-3 py-2.5 px-2.5 bg-[#FFEAEA] rounded-xl mb-1">
+        <div class="w-6 text-center font-['Sora'] font-bold text-xs text-gray-400">5</div>
+        <div class="w-9 h-9 rounded-full bg-[#C1121F] text-white flex items-center justify-center font-bold text-xs font-['Sora']">9A</div>
+        <div class="flex-1">
+          <div class="flex items-center gap-1.5">
+            <span class="text-xs font-semibold text-[#C1121F]">Turma 9º A</span>
+            <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-[#C1121F] text-white">VOCÊ</span>
+          </div>
+          <span class="text-[11px] text-[#888888]">32 alunos ativos</span>
+        </div>
+        <span class="text-sm font-bold font-['Sora'] text-[#C1121F]">3.750</span>
+      </div>
+
+      <div class="flex items-center gap-3 py-2.5 border-b border-gray-100">
+        <div class="w-6 text-center font-['Sora'] font-bold text-xs text-gray-400">6</div>
+        <div class="w-9 h-9 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center font-bold text-xs font-['Sora']">1B</div>
+        <div class="flex-1">
+          <span class="text-xs font-semibold text-[#1A1A2E]">Turma 1º B</span>
+          <br><span class="text-[11px] text-[#888888]">29 alunos ativos</span>
+        </div>
+        <span class="text-sm font-bold font-['Sora'] text-[#1A1A2E]">3.200</span>
+      </div>
+
+      <div class="bg-[#F4F4F4] rounded-[14px] p-3.5 mt-4">
+        <div class="flex justify-between items-center mb-2">
+          <p class="text-xs font-semibold text-gray-800 m-0">Progresso Semanal da Turma</p>
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-green-50 text-green-700 border border-green-200">+15% vs ontem</span>
+        </div>
+        <div class="h-2 rounded-full bg-gray-200 overflow-hidden mb-2">
+          <div class="h-full rounded-full bg-gradient-to-r from-[#E63946] to-[#C1121F]" style="width:65%;"></div>
+        </div>
+        <div class="flex justify-between text-[11px]">
+          <span class="text-[#888888]">Meta: 5.000 pts</span>
+          <span class="font-semibold text-[#C1121F]">65% alcançado</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex border-t border-gray-100 bg-white pt-2 pb-1 sticky bottom-0 mt-auto z-10">
+      <a href="home.html" class="flex-1 flex flex-col items-center gap-0.5 text-[10px] font-medium py-1 text-[#888888] hover:text-[#C1121F]">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="ranking.html" class="flex-1 flex flex-col items-center gap-0.5 text-[10px] font-medium py-1 text-[#C1121F]">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Ranking
+      </a>
+      <a href="diary.html" class="flex-1 flex flex-col items-center gap-0.5 text-[10px] font-medium py-1 text-[#888888] hover:text-[#C1121F]">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Diário
+      </a>
+      <a href="profile.html" class="flex-1 flex flex-col items-center gap-0.5 text-[10px] font-medium py-1 text-[#888888] hover:text-[#C1121F]">
+        <svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Perfil
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
