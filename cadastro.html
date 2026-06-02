@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SESI Leitura+ - Criar Conta</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#F0F0F0] m-0 flex justify-center items-start min-h-screen p-5 font-['DM_Sans'] antialiased">
+
+  <div class="w-[390px] min-h-[780px] bg-white rounded-[36px] shadow-[0_30px_80px_rgba(0,0,0,0.18),0_0_0_8px_#1A1A2E] overflow-hidden relative flex flex-col p-7 pt-10 pb-8">
+    
+    <div class="flex items-center gap-2.5 mb-1.5">
+      <div class="w-11 h-11 bg-[#C1121F] rounded-xl flex items-center justify-center">
+        <svg viewBox="0 0 24 24" fill="white" class="w-6 h-6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      </div>
+      <div>
+        <h1 class="text-2xl font-bold font-['Sora'] text-[#1A1A2E] m-0">Criar <span class="text-[#C1121F]">Conta</span></h1>
+        <p class="text-xs text-[#888888] m-0">Cadastre-se para começar a ler</p>
+      </div>
+    </div>
+
+    <div class="h-[1px] bg-gray-100 my-6"></div>
+
+    <form id="cadastroForm">
+      <div class="mb-4">
+        <label class="text-xs font-semibold text-gray-700 block mb-1.5">Nome Completo</label>
+        <input type="text" name="nome" required class="border border-gray-200 rounded-xl p-3 w-full text-sm outline-none bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
+      </div>
+
+      <div class="mb-4">
+        <label class="text-xs font-semibold text-gray-700 block mb-1.5">RM (Número da matrícula)</label>
+        <input type="text" name="rm" placeholder="3247639" required class="border border-gray-200 rounded-xl p-3 w-full text-sm outline-none bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
+      </div>
+
+      <div class="mb-4">
+        <label class="text-xs font-semibold text-gray-700 block mb-1.5">E-mail</label>
+        <input type="email" name="email" required class="border border-gray-200 rounded-xl p-3 w-full text-sm outline-none bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
+      </div>
+
+      <div class="mb-4">
+        <label class="text-xs font-semibold text-gray-700 block mb-1.5">Senha</label>
+        <input type="password" name="senha" required class="border border-gray-200 rounded-xl p-3 w-full text-sm outline-none bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
+      </div>
+
+      <div class="mb-6">
+        <label class="text-xs font-semibold text-gray-700 block mb-1.5">Confirmar Senha</label>
+        <input type="password" name="confirmar_senha" required class="border border-gray-200 rounded-xl p-3 w-full text-sm outline-none bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
+      </div>
+
+      <button type="submit" class="bg-[#C1121F] text-white rounded-xl p-3.5 text-sm font-bold cursor-pointer w-full tracking-wide hover:bg-[#a00e19] font-['Sora']">
+        CADASTRAR →
+      </button>
+
+      <div class="mt-6 text-center">
+        <p class="text-xs text-gray-600">Já tem uma conta? 
+          <a href="index.html" class="text-[#C1121F] font-semibold hover:underline">Fazer login</a>
+        </p>
+      </div>
+    </form>
+
+    <p class="text-center text-[10px] text-gray-300 mt-6 pt-4">Termos de Uso · Privacidade · SESI</p>
+  </div>
+
+  <script>
+    const API_URL = 'http://localhost:3000'; // ou sua URL da Vercel
+
+    document.getElementById('cadastroForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const nome = form.nome.value.trim();
+      const rm = form.rm.value.trim();
+      const email = form.email.value.trim();
+      const senha = form.senha.value;
+      const confirmarSenha = form.confirmar_senha.value;
+
+      if (senha !== confirmarSenha) {
+        alert('As senhas não coincidem!');
+        return;
+      }
+
+      try {
+        const resposta = await fetch(`${API_URL}/api/cadastro`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nome: nome,
+            rm: rm,
+            matricula: rm,
+            email: email,
+            senha: senha
+          })
+        });
+
+        const resultado = await resposta.json();
+
+        if (resposta.ok) {
+          alert('Conta criada com sucesso! Faça login.');
+          window.location.href = 'index.html';
+        } else {
+          alert(resultado.mensagem || 'Erro ao criar conta. Tente novamente.');
+        }
+      } catch (erro) {
+        console.error('Erro:', erro);
+        alert('Erro ao conectar com o servidor.');
+      }
+    });
+  </script>
+</body>
+</html>

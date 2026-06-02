@@ -2,84 +2,133 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>SESI Leitura+ - Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body class="bg-[#F0F0F0] m-0 flex justify-center items-start min-h-screen p-5 font-['DM_Sans'] antialiased">
-
-  <div class="w-[390px] min-h-[780px] bg-white rounded-[36px] shadow-[0_30px_80px_rgba(0,0,0,0.18),0_0_0_8px_#1A1A2E] overflow-hidden relative flex flex-col p-7 pt-10 pb-8">
+  <style>
+    * {
+      font-family: 'DM Sans', sans-serif;
+    }
+    h1, h2, h3, button {
+      font-family: 'Sora', sans-serif;
+    }
     
-    <div class="flex items-center gap-2.5 mb-1.5">
-      <div class="w-11 h-11 bg-[#C1121F] rounded-xl flex items-center justify-center">
-        <svg viewBox="0 0 24 24" fill="white" class="w-6 h-6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+    /* Estilos responsivos */
+    @media (min-width: 768px) {
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .login-card {
+        box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#F0F0F0] m-0 flex justify-center items-center min-h-screen p-3 md:p-5 font-['DM_Sans'] antialiased">
+
+  <!-- Container responsivo -->
+  <div class="w-full max-w-[450px] md:max-w-[480px] bg-white rounded-2xl md:rounded-[36px] shadow-lg md:shadow-[0_30px_80px_rgba(0,0,0,0.18)] overflow-hidden p-5 md:p-8 login-card">
+    
+    <!-- Logo e Título -->
+    <div class="flex items-center gap-3 mb-6 md:mb-8">
+      <div class="w-10 h-10 md:w-12 md:h-12 bg-[#C1121F] rounded-xl flex items-center justify-center">
+        <svg viewBox="0 0 24 24" fill="white" class="w-5 h-5 md:w-6 md:h-6">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+        </svg>
       </div>
       <div>
-        <h1 class="text-2xl font-bold font-['Sora'] text-[#1A1A2E] m-0">SESI Leitura<span class="text-[#C1121F]">+</span></h1>
-        <p class="text-xs text-[#888888] m-0">Entre para continuar sua leitura</p>
+        <h1 class="text-xl md:text-2xl font-bold text-[#1A1A2E]">SESI Leitura<span class="text-[#C1121F]">+</span></h1>
+        <p class="text-[10px] md:text-xs text-[#888888]">Entre para continuar sua leitura</p>
       </div>
     </div>
 
-    <div class="h-[1px] bg-gray-100 my-6"></div>
+    <div class="h-[1px] bg-gray-100 my-4 md:my-6"></div>
 
-    <form id="loginForm" class="flex-1 flex flex-col justify-between">
-      <div>
-        <div class="mb-4.5">
-          <label class="text-xs font-semibold text-gray-700 block mb-1.5">RM ou Matrícula</label>
-          <input type="text" name="identificador" placeholder="000000000" class="border border-gray-200 rounded-xl p-3 w-full text-sm outline-none transition-all duration-200 bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
+    <!-- Formulário de Login -->
+    <form id="loginForm" class="flex flex-col">
+      <div class="mb-4">
+        <label class="text-xs font-semibold text-gray-700 block mb-1.5">RM ou E-mail</label>
+        <input type="text" name="identificador" placeholder="Digite seu RM ou e-mail" 
+               class="border border-gray-200 rounded-xl p-3 w-full text-sm outline-none transition-all duration-200 bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
+      </div>
+
+      <div class="mb-4">
+        <div class="flex justify-between items-center mb-1.5">
+          <label class="text-xs font-semibold text-gray-700">Senha</label>
+          <a href="#" class="text-xs text-[#C1121F] font-medium hover:underline">Esqueceu a senha?</a>
         </div>
-
-        <div class="mb-2">
-          <div class="flex justify-between items-center mb-1.5">
-            <label class="text-xs font-semibold text-gray-700">Senha</label>
-            <a href="#" class="text-xs text-[#C1121F] font-medium hover:underline">Esqueceu a senha?</a>
-          </div>
-          <div class="relative">
-            <input type="password" name="senha" placeholder="••••••••" class="border border-gray-200 rounded-xl p-3 pr-10 w-full text-sm outline-none transition-all duration-200 bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
-            <button type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-[18px]"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-2 my-4 mb-5">
-          <input type="checkbox" id="manter" class="accent-[#C1121F] w-4 h-4 cursor-pointer" />
-          <label for="manter" class="text-xs text-gray-600 cursor-pointer select-none">Manter conectado</label>
-        </div>
-
-        <button type="submit" class="bg-[#C1121F] text-white border-none rounded-xl p-3.5 text-sm font-bold cursor-pointer w-full tracking-wide transition-all duration-200 hover:bg-[#a00e19] active:scale-95 font-['Sora']">
-          ENTRAR →
-        </button>
-
-        <div class="flex items-center gap-3 my-5">
-          <div class="flex-1 h-[1px] bg-gray-200"></div>
-          <span class="text-[11px] text-gray-400 font-medium tracking-wider">OU ACESSAR COM</span>
-          <div class="flex-1 h-[1px] bg-gray-200"></div>
-        </div>
-
-        <div class="flex gap-2.5">
-          <button type="button" class="flex-1 bg-transparent border border-gray-200 rounded-xl p-3 text-xs font-medium text-gray-700 flex items-center justify-center gap-1.5 transition-all duration-200 hover:border-[#C1121F] hover:text-[#C1121F]">
-            <svg viewBox="0 0 24 24" class="w-4.5 h-4.5"><path fill="#EA4335" d="M5.27 9.77A7.2 7.2 0 0 1 12 4.8c1.7 0 3.24.59 4.44 1.56L19.9 3a11.98 11.98 0 0 0-7.9-3C7.32 0 3.18 2.7 1.25 6.65l4.02 3.12z"/><path fill="#34A853" d="M16.04 18.01A7.12 7.12 0 0 1 12 19.2a7.2 7.2 0 0 1-6.7-4.55L1.25 17.7C3.17 21.56 7.32 24 12 24c2.93 0 5.73-1.02 7.83-2.93l-3.79-3.06z"/><path fill="#FBBC04" d="M19.83 21.07C22.03 19.01 23.4 15.93 23.4 12c0-.75-.1-1.57-.24-2.4H12v5.1h6.44a5.52 5.52 0 0 1-2.4 3.31l3.79 3.06z"/><path fill="#4285F4" d="M5.3 14.65A7.17 7.17 0 0 1 4.8 12c0-.93.17-1.83.47-2.65L1.25 6.23A11.91 11.91 0 0 0 0 12c0 1.93.46 3.74 1.25 5.35l4.05-2.7z"/></svg>
-            Google
-          </button>
-          <button type="button" class="flex-1 bg-transparent border border-gray-200 rounded-xl p-3 text-xs font-medium text-gray-700 flex items-center justify-center gap-1.5 transition-all duration-200 hover:border-[#C1121F] hover:text-[#C1121F]">
-            <svg viewBox="0 0 24 24" class="w-4.5 h-4.5" fill="#0078D4"><rect x="1" y="4" width="14" height="16" rx="2"/><path fill="#fff" d="M4 8h8v8H4z" opacity=".3"/><path fill="#0078D4" d="M15 8h7v8h-7z"/><circle cx="8" cy="12" r="2.5" fill="#0078D4"/></svg>
-            Outlook
+        <div class="relative">
+          <input type="password" name="senha" placeholder="••••••••" 
+                 class="border border-gray-200 rounded-xl p-3 pr-10 w-full text-sm outline-none transition-all duration-200 bg-gray-50 focus:border-[#C1121F] focus:bg-white" />
+          <button type="button" class="toggle-senha absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-[18px]">
+              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
           </button>
         </div>
       </div>
 
-      <div class="mt-auto pt-4">
-        <p class="text-center text-xs text-gray-600 m-0">Novo por aqui? <a href="#" class="text-[#C1121F] font-semibold hover:underline">Criar uma conta</a></p>
-        <p class="text-center text-[10px] color-gray-300 mt-4 text-gray-300">Termos de Uso · Privacidade · SESI</p>
+      <div class="flex items-center gap-2 my-3">
+        <input type="checkbox" id="manter" class="accent-[#C1121F] w-4 h-4 cursor-pointer" />
+        <label for="manter" class="text-xs text-gray-600 cursor-pointer select-none">Manter conectado</label>
+      </div>
+
+      <button type="submit" 
+              class="bg-[#C1121F] text-white border-none rounded-xl p-3.5 text-sm font-bold cursor-pointer w-full tracking-wide transition-all duration-200 hover:bg-[#a00e19] active:scale-95">
+        ENTRAR →
+      </button>
+
+      <!-- Divisor -->
+      <div class="flex items-center gap-3 my-5">
+        <div class="flex-1 h-[1px] bg-gray-200"></div>
+        <span class="text-[11px] text-gray-400 font-medium tracking-wider">OU ACESSAR COM</span>
+        <div class="flex-1 h-[1px] bg-gray-200"></div>
+      </div>
+
+      <!-- Botões de Acesso Rápido -->
+      <div class="flex gap-2.5 mb-6">
+        <button type="button" 
+                class="flex-1 bg-transparent border border-gray-200 rounded-xl p-3 text-xs font-medium text-gray-700 flex items-center justify-center gap-1.5 transition-all duration-200 hover:border-[#C1121F] hover:text-[#C1121F]">
+          <svg viewBox="0 0 24 24" class="w-4 h-4">
+            <path fill="#EA4335" d="M5.27 9.77A7.2 7.2 0 0 1 12 4.8c1.7 0 3.24.59 4.44 1.56L19.9 3a11.98 11.98 0 0 0-7.9-3C7.32 0 3.18 2.7 1.25 6.65l4.02 3.12z"/>
+            <path fill="#34A853" d="M16.04 18.01A7.12 7.12 0 0 1 12 19.2a7.2 7.2 0 0 1-6.7-4.55L1.25 17.7C3.17 21.56 7.32 24 12 24c2.93 0 5.73-1.02 7.83-2.93l-3.79-3.06z"/>
+            <path fill="#FBBC04" d="M19.83 21.07C22.03 19.01 23.4 15.93 23.4 12c0-.75-.1-1.57-.24-2.4H12v5.1h6.44a5.52 5.52 0 0 1-2.4 3.31l3.79 3.06z"/>
+            <path fill="#4285F4" d="M5.3 14.65A7.17 7.17 0 0 1 4.8 12c0-.93.17-1.83.47-2.65L1.25 6.23A11.91 11.91 0 0 0 0 12c0 1.93.46 3.74 1.25 5.35l4.05-2.7z"/>
+          </svg>
+          Google
+        </button>
+        <button type="button" 
+                class="flex-1 bg-transparent border border-gray-200 rounded-xl p-3 text-xs font-medium text-gray-700 flex items-center justify-center gap-1.5 transition-all duration-200 hover:border-[#C1121F] hover:text-[#C1121F]">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="#0078D4">
+            <rect x="1" y="4" width="14" height="16" rx="2"/>
+            <path fill="#fff" d="M4 8h8v8H4z" opacity=".3"/>
+            <path fill="#0078D4" d="M15 8h7v8h-7z"/>
+            <circle cx="8" cy="12" r="2.5" fill="#0078D4"/>
+          </svg>
+          Outlook
+        </button>
+      </div>
+
+      <!-- Links do Rodapé -->
+      <div class="mt-2 pt-2">
+        <p class="text-center text-xs text-gray-600">Novo por aqui? 
+          <a href="cadastro.html" class="text-[#C1121F] font-semibold hover:underline">Criar uma conta</a>
+        </p>
+        <p class="text-center text-[10px] text-gray-300 mt-4">Termos de Uso · Privacidade · SESI</p>
       </div>
     </form>
 
   </div>
 
   <script>
+    // CONFIGURAÇÃO - Altere conforme necessário
     const API_URL = 'https://sesileitura-back.vercel.app';
+    // Para teste local: const API_URL = 'http://localhost:3000';
 
     document.getElementById('loginForm').addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -87,26 +136,112 @@
       const form = event.currentTarget;
       const identificador = form.identificador.value.trim();
       const senha = form.senha.value;
+      const manterConectado = document.getElementById('manter').checked;
+
+      // Validação
+      if (!identificador || !senha) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      // Desabilita botão
+      const botao = form.querySelector('button[type="submit"]');
+      const textoOriginal = botao.innerHTML;
+      botao.innerHTML = 'ENTRANDO...';
+      botao.disabled = true;
 
       try {
-        const resposta = await fetch(`${API_URL}/api/cadastro/login`, {
+        console.log('1️⃣ Enviando requisição para:', `${API_URL}/api/cadastro/login`);
+        console.log('2️⃣ Com dados:', { identificador, senha: '***' });
+        
+        const options = {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ identificador, senha })
-        });
-
+          headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            identificador: identificador,
+            senha: senha
+          }),
+          mode: 'cors',
+          credentials: 'omit'
+        };
+        
+        const resposta = await fetch(`${API_URL}/api/cadastro/login`, options);
+        
+        console.log('3️⃣ Status:', resposta.status);
+        
         const resultado = await resposta.json();
+        console.log('4️⃣ Resposta:', resultado);
 
-        if (!resposta.ok) {
-          alert(resultado.mensagem || 'Não foi possível entrar.');
-          return;
+        if (resposta.ok && resultado.sucesso) {
+          // Salvar dados do usuário
+          const dadosUsuario = {
+            id: resultado.usuario?.id,
+            nome: resultado.usuario?.nome,
+            rm: resultado.usuario?.rm,
+            email: resultado.usuario?.email,
+            loginTimestamp: new Date().toISOString()
+          };
+          
+          if (manterConectado) {
+            localStorage.setItem('usuario', JSON.stringify(dadosUsuario));
+            localStorage.setItem('keepLoggedIn', 'true');
+          } else {
+            sessionStorage.setItem('usuario', JSON.stringify(dadosUsuario));
+          }
+          
+          alert(`✅ Bem-vindo, ${dadosUsuario.nome || 'Usuário'}!`);
+          window.location.href = 'home.html';
+        } else {
+          alert(resultado.mensagem || 'Erro ao fazer login.');
+          botao.innerHTML = textoOriginal;
+          botao.disabled = false;
         }
-
-        localStorage.setItem('usuario', JSON.stringify(resultado.usuario));
-        window.location.href = 'home.html';
       } catch (erro) {
-        alert('Erro ao conectar com o servidor.');
+        console.error('❌ Erro completo:', erro);
+        
+        let mensagem = 'Erro ao conectar com o servidor.\n\n';
+        if (erro.message === 'Failed to fetch') {
+          mensagem += 'Não foi possível conectar ao backend em:\n' + API_URL + '\n\n';
+          mensagem += 'Soluções:\n';
+          mensagem += '1. Verifique se o backend está rodando\n';
+          mensagem += '2. Tente usar localhost: http://localhost:3000\n';
+          mensagem += '3. Verifique sua conexão com a internet';
+        } else { 
+          mensagem += erro.message;
+        }
+        
+        alert(mensagem);
+        botao.innerHTML = textoOriginal;
+        botao.disabled = false;
       }
+    });
+
+    // Mostrar/Esconder senha
+    document.querySelector('.toggle-senha')?.addEventListener('click', function() {
+      const inputSenha = document.querySelector('input[name="senha"]');
+      if (inputSenha) {
+        inputSenha.type = inputSenha.type === 'password' ? 'text' : 'password';
+      }
+    });
+
+    // Verificar se já tem sessão ativa
+    window.addEventListener('load', () => {
+      const usuarioLogado = localStorage.getItem('usuario') || sessionStorage.getItem('usuario');
+      if (usuarioLogado) {
+        const confirmar = confirm('Você já está com sessão ativa. Deseja continuar logado?');
+        if (confirmar) {
+          window.location.href = 'home.html';
+        }
+      }
+      
+      // Teste de conexão com backend
+      fetch(`${API_URL}/`)
+        .then(r => r.json())
+        .then(dados => console.log('✅ Backend conectado:', dados))
+        .catch(erro => console.error('❌ Backend offline:', erro));
     });
   </script>
 </body>
