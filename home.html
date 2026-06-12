@@ -87,9 +87,18 @@
             </div>
             <p class="text-gray-500 text-[10px] mt-2 text-center">💡 Registre quantos minutos seu filho leu hoje!</p>
           </div>
+
+          <!-- NOVO: Botão de acesso ao histórico completo -->
+          <a href="leituras.html"
+             class="mt-4 flex items-center justify-center gap-2 w-full border border-gray-600 text-gray-300 rounded-xl py-2.5 text-xs font-semibold hover:border-[#C1121F] hover:text-[#C1121F] transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            Ver histórico completo de leituras →
+          </a>
         </div>
 
-        <!-- Leituras em Andamento - COM REGISTRO DE PÁGINAS -->
+        <!-- Leituras em Andamento -->
         <div class="mb-6">
           <div class="flex justify-between items-center mb-3">
             <h3 class="font-bold text-gray-800 text-sm md:text-base">📖 Acompanhar leitura</h3>
@@ -114,8 +123,6 @@
                 </div>
               </div>
             </div>
-            
-            <!-- Registrar páginas lidas -->
             <div class="mt-3 pt-3 border-t border-gray-200">
               <p class="text-xs text-gray-500 mb-2">📝 Quantas páginas seu filho leu hoje?</p>
               <div class="flex gap-2">
@@ -148,8 +155,6 @@
                 </div>
               </div>
             </div>
-            
-            <!-- Registrar páginas lidas -->
             <div class="mt-3 pt-3 border-t border-gray-200">
               <p class="text-xs text-gray-500 mb-2">📝 Quantas páginas seu filho leu hoje?</p>
               <div class="flex gap-2">
@@ -168,7 +173,7 @@
         <div>
           <div class="flex justify-between items-center mb-3">
             <h3 class="font-bold text-gray-800 text-sm md:text-base">🔥 Livros recomendados</h3>
-            <a href="#" class="text-xs text-[#C1121F] hover:underline">Ver todos →</a>
+            
           </div>
           
           <div class="flex gap-3 overflow-x-auto pb-2 hide-scrollbar">
@@ -176,25 +181,22 @@
               <div class="w-full h-24 md:h-28 bg-gray-200 rounded-lg flex items-center justify-center text-3xl mb-1">📖</div>
               <p class="text-xs font-semibold">1984</p>
               <p class="text-[10px] text-gray-500">George Orwell</p>
-              <button class="w-full mt-2 bg-[#C1121F] text-white rounded-lg py-1 text-[10px] hover:bg-[#a00e19]">Adicionar</button>
             </div>
             <div class="min-w-[100px] md:min-w-[120px] bg-gray-50 rounded-xl p-2 text-center hover:shadow-md transition-shadow">
               <div class="w-full h-24 md:h-28 bg-gray-200 rounded-lg flex items-center justify-center text-3xl mb-1">📖</div>
               <p class="text-xs font-semibold">O Alquimista</p>
               <p class="text-[10px] text-gray-500">Paulo Coelho</p>
-              <button class="w-full mt-2 bg-[#C1121F] text-white rounded-lg py-1 text-[10px] hover:bg-[#a00e19]">Adicionar</button>
+              
             </div>
             <div class="min-w-[100px] md:min-w-[120px] bg-gray-50 rounded-xl p-2 text-center hover:shadow-md transition-shadow">
               <div class="w-full h-24 md:h-28 bg-gray-200 rounded-lg flex items-center justify-center text-3xl mb-1">📖</div>
               <p class="text-xs font-semibold">O Menino Maluquinho</p>
               <p class="text-[10px] text-gray-500">Ziraldo</p>
-              <button class="w-full mt-2 bg-[#C1121F] text-white rounded-lg py-1 text-[10px] hover:bg-[#a00e19]">Adicionar</button>
             </div>
             <div class="min-w-[100px] md:min-w-[120px] bg-gray-50 rounded-xl p-2 text-center hover:shadow-md transition-shadow">
               <div class="w-full h-24 md:h-28 bg-gray-200 rounded-lg flex items-center justify-center text-3xl mb-1">📖</div>
               <p class="text-xs font-semibold">A Bolsa Amarela</p>
               <p class="text-[10px] text-gray-500">Lygia Bojunga</p>
-              <button class="w-full mt-2 bg-[#C1121F] text-white rounded-lg py-1 text-[10px] hover:bg-[#a00e19]">Adicionar</button>
             </div>
           </div>
         </div>
@@ -231,24 +233,42 @@
             </div>
           </div>
         </div>
+
+        <!-- NOVO: Atalho para Leituras na sidebar -->
+        <div class="p-5 border-b border-gray-100">
+          <h3 class="font-bold text-gray-800 mb-3">📋 Minhas Leituras</h3>
+          <p class="text-sm text-gray-600 mb-3">Veja seu histórico completo e registre novas sessões de leitura.</p>
+          <a href="leituras.html"
+             class="w-full flex items-center justify-center gap-2 bg-[#1A1A2E] text-white rounded-lg py-2.5 text-sm font-semibold hover:bg-[#C1121F] transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+            Acessar Leituras →
+          </a>
+        </div>
         
         <div class="p-5">
           <h3 class="font-bold text-gray-800 mb-3">💡 Dica para os pais</h3>
           <p class="text-sm text-gray-600">"Ler com seu filho 20 minutos por dia desenvolve vocabulário e criatividade."</p>
-          <button class="w-full mt-4 bg-[#C1121F] text-white rounded-lg py-2 text-sm hover:bg-[#a00e19] transition-colors">
-            Ver mais dicas →
-          </button>
         </div>
       </div>
     </div>
 
-    <!-- Menu de Navegação Inferior (Celular) -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-2 flex justify-between items-center max-w-[500px] mx-auto md:hidden">
+    <!-- Menu de Navegação Inferior (Celular) — ATUALIZADO com aba Leituras -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 flex justify-between items-center max-w-[500px] mx-auto md:hidden">
       <a href="home.html" class="flex flex-col items-center gap-1 text-[#C1121F]">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
         </svg>
         <span class="text-[10px]">Início</span>
+      </a>
+
+      <!-- NOVO: aba Leituras -->
+      <a href="leituras.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#C1121F] transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        <span class="text-[10px]">Leituras</span>
       </a>
       
       <a href="ranking.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#C1121F] transition-colors">
@@ -270,11 +290,9 @@
   </div>
 
   <script>
-    // Chaves para salvar os dados
     const STORAGE_KEY = 'minutosLeitura';
     const META_DIARIA = 60;
     
-    // Progresso dos livros
     let progressoLivros = {
       pequeno_principe: 45,
       dom_casmurro: 12
@@ -289,170 +307,100 @@
 
     function carregarDadosUsuario() {
       let usuario = localStorage.getItem('usuario');
-      if (!usuario) {
-        usuario = sessionStorage.getItem('usuario');
-      }
-      
+      if (!usuario) usuario = sessionStorage.getItem('usuario');
       if (!usuario) {
         alert('Sessão expirada. Faça login novamente.');
         window.location.href = 'index.html';
         return null;
       }
-      
-      try {
-        return JSON.parse(usuario);
-      } catch (e) {
-        console.error('Erro ao parsear usuário:', e);
-        return null;
-      }
+      try { return JSON.parse(usuario); }
+      catch (e) { console.error('Erro ao parsear usuário:', e); return null; }
     }
 
-    // Carregar progresso dos livros
     function carregarProgressoLivros() {
       const salvos = localStorage.getItem('progressoLivros');
-      if (salvos) {
-        progressoLivros = JSON.parse(salvos);
-      }
-      
-      // Atualizar interface
+      if (salvos) progressoLivros = JSON.parse(salvos);
       document.getElementById('progresso1').textContent = progressoLivros.pequeno_principe;
-      const percentual1 = (progressoLivros.pequeno_principe / 96) * 100;
-      document.getElementById('barra1').style.width = `${percentual1}%`;
-      
+      document.getElementById('barra1').style.width = `${(progressoLivros.pequeno_principe / 96) * 100}%`;
       document.getElementById('progresso2').textContent = progressoLivros.dom_casmurro;
-      const percentual2 = (progressoLivros.dom_casmurro / 280) * 100;
-      document.getElementById('barra2').style.width = `${percentual2}%`;
+      document.getElementById('barra2').style.width = `${(progressoLivros.dom_casmurro / 280) * 100}%`;
     }
     
-    // Registrar páginas lidas
     function registrarPaginas(livroId, livroNum, totalPaginas) {
       const input = document.getElementById(`paginas${livroNum}`);
       let paginasLidas = parseInt(input.value);
-      
       if (isNaN(paginasLidas) || paginasLidas <= 0) {
         alert('Por favor, digite quantas páginas seu filho leu hoje.');
         return;
       }
-      
       const paginaAtual = progressoLivros[livroId];
       const novaPagina = paginaAtual + paginasLidas;
-      
       if (novaPagina > totalPaginas) {
         const limite = totalPaginas - paginaAtual;
-        alert(`⚠️ Só faltam ${limite} páginas para terminar o livro! Você pode ler no máximo ${limite} páginas agora.`);
+        alert(`⚠️ Só faltam ${limite} páginas para terminar o livro!`);
         return;
       }
-      
-      // Atualizar progresso
       progressoLivros[livroId] = novaPagina;
       localStorage.setItem('progressoLivros', JSON.stringify(progressoLivros));
-      
-      // Atualizar interface
       document.getElementById(`progresso${livroNum}`).textContent = novaPagina;
-      const percentual = (novaPagina / totalPaginas) * 100;
-      document.getElementById(`barra${livroNum}`).style.width = `${percentual}%`;
-      
-      // Adicionar minutos automaticamente (1 página = ~1 minuto de leitura)
+      document.getElementById(`barra${livroNum}`).style.width = `${(novaPagina / totalPaginas) * 100}%`;
       const minutosGanhos = paginasLidas;
-      const minutosAtuais = carregarMinutos();
-      const novosMinutos = minutosAtuais + minutosGanhos;
+      const novosMinutos = carregarMinutos() + minutosGanhos;
       salvarMinutos(novosMinutos);
       atualizarInterfaceMinutos(novosMinutos);
-      
-      // Feedback
       const botao = event.currentTarget;
       const textoOriginal = botao.innerHTML;
       botao.innerHTML = '✓ Registrado!';
       botao.disabled = true;
-      
-      setTimeout(() => {
-        botao.innerHTML = textoOriginal;
-        botao.disabled = false;
-      }, 1500);
-      
+      setTimeout(() => { botao.innerHTML = textoOriginal; botao.disabled = false; }, 1500);
       input.value = '';
-      
-      // Mensagem de incentivo
       if (novaPagina === totalPaginas) {
-        setTimeout(() => {
-          alert(`🎉 Parabéns! Seu filho terminou o livro "${livroId === 'pequeno_principe' ? 'O Pequeno Príncipe' : 'Dom Casmurro'}"! 🎉`);
-        }, 500);
-      } else {
-        const paginasRestantes = totalPaginas - novaPagina;
-        if (paginasRestantes > 0 && paginasRestantes <= 10) {
-          setTimeout(() => {
-            alert(`💪 Faltam apenas ${paginasRestantes} páginas para terminar o livro! Vocês conseguem!`);
-          }, 500);
-        }
+        setTimeout(() => alert(`🎉 Parabéns! Seu filho terminou o livro!`), 500);
       }
     }
     
-    // Funções de minutos
     function carregarMinutos() {
       const hoje = new Date().toDateString();
       const dadosSalvos = localStorage.getItem(STORAGE_KEY);
-      
       if (dadosSalvos) {
         const dados = JSON.parse(dadosSalvos);
-        if (dados.data === hoje) {
-          return dados.minutos;
-        }
+        if (dados.data === hoje) return dados.minutos;
       }
       return 0;
     }
     
     function salvarMinutos(minutos) {
       const hoje = new Date().toDateString();
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        data: hoje,
-        minutos: minutos
-      }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ data: hoje, minutos }));
     }
     
     function atualizarInterfaceMinutos(minutos) {
-      const minutosElement = document.getElementById('minutosLidos');
-      const barraElement = document.getElementById('barraProgresso');
-      const mensagemElement = document.getElementById('mensagemMeta');
-      
-      if (minutosElement) minutosElement.textContent = minutos;
-      
-      const percentual = Math.min((minutos / META_DIARIA) * 100, 100);
-      if (barraElement) barraElement.style.width = `${percentual}%`;
-      
-      const minutosRestantes = Math.max(META_DIARIA - minutos, 0);
-      if (mensagemElement) {
-        if (minutos >= META_DIARIA) {
-          mensagemElement.innerHTML = '🎉 Parabéns! Meta de leitura atingida! 🎉';
-        } else {
-          mensagemElement.innerHTML = `Faltam <strong class="text-white">${minutosRestantes} minutos</strong> para a meta diária!`;
-        }
+      const minutosEl = document.getElementById('minutosLidos');
+      const barraEl = document.getElementById('barraProgresso');
+      const msgEl = document.getElementById('mensagemMeta');
+      if (minutosEl) minutosEl.textContent = minutos;
+      const pct = Math.min((minutos / META_DIARIA) * 100, 100);
+      if (barraEl) barraEl.style.width = `${pct}%`;
+      const restantes = Math.max(META_DIARIA - minutos, 0);
+      if (msgEl) {
+        msgEl.innerHTML = minutos >= META_DIARIA
+          ? '🎉 Parabéns! Meta de leitura atingida! 🎉'
+          : `Faltam <strong class="text-white">${restantes} minutos</strong> para a meta diária!`;
       }
     }
     
     function adicionarMinutos() {
       const input = document.getElementById('minutosInput');
-      let minutosParaAdicionar = parseInt(input.value);
-      
-      if (isNaN(minutosParaAdicionar) || minutosParaAdicionar <= 0) {
-        alert('Digite um número válido de minutos.');
-        return;
-      }
-      
-      const minutosAtuais = carregarMinutos();
-      const novosMinutos = minutosAtuais + minutosParaAdicionar;
-      salvarMinutos(novosMinutos);
-      atualizarInterfaceMinutos(novosMinutos);
-      
+      let min = parseInt(input.value);
+      if (isNaN(min) || min <= 0) { alert('Digite um número válido de minutos.'); return; }
+      const novos = carregarMinutos() + min;
+      salvarMinutos(novos);
+      atualizarInterfaceMinutos(novos);
       const botao = event.currentTarget;
-      const textoOriginal = botao.innerHTML;
+      const orig = botao.innerHTML;
       botao.innerHTML = '✓ Adicionado!';
       botao.disabled = true;
-      
-      setTimeout(() => {
-        botao.innerHTML = textoOriginal;
-        botao.disabled = false;
-      }, 1500);
-      
+      setTimeout(() => { botao.innerHTML = orig; botao.disabled = false; }, 1500);
       input.value = '';
     }
     
@@ -460,8 +408,7 @@
       const usuario = carregarDadosUsuario();
       if (usuario) {
         document.getElementById('saudacao').textContent = `${getSaudacao()},`;
-        const nomeExibir = usuario.nome || `Mãe do RM ${usuario.rm}` || 'Mãe';
-        document.getElementById('nomeUsuario').textContent = nomeExibir;
+        document.getElementById('nomeUsuario').textContent = usuario.nome || `Mãe do RM ${usuario.rm}` || 'Mãe';
       } else {
         window.location.href = 'index.html';
       }
@@ -476,8 +423,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       exibirDadosUsuario();
       carregarProgressoLivros();
-      const minutos = carregarMinutos();
-      atualizarInterfaceMinutos(minutos);
+      atualizarInterfaceMinutos(carregarMinutos());
     });
   </script>
 </body>
